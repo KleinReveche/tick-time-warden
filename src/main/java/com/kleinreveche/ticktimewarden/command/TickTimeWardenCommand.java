@@ -11,19 +11,13 @@ public class TickTimeWardenCommand {
 
     public static int run(@NotNull CommandContext<ServerCommandSource> context) {
         ServerCommandSource source = context.getSource();
+        TickTimeWardenCommand.stopWhenNoPlayers = !TickTimeWardenCommand.stopWhenNoPlayers;
 
-        if (source.hasPermissionLevel(2)) {
-            TickTimeWardenCommand.stopWhenNoPlayers = !TickTimeWardenCommand.stopWhenNoPlayers;
+        if (!TickTimeWardenCommand.stopWhenNoPlayers)
+            source.sendFeedback(() -> Text.literal("Temporarily, the server will not suspend when there are no players."), true);
+        else
+            source.sendFeedback(() -> Text.literal("The server will suspend when there are no players."), true);
 
-            if (!TickTimeWardenCommand.stopWhenNoPlayers)
-                source.sendFeedback(() -> Text.literal("Temporarily, the server will not suspend when there are no players."), true);
-            else
-                source.sendFeedback(() -> Text.literal("The server will suspend when there are no players."), true);
-
-            return 1;
-        } else {
-            source.sendError(Text.literal("You must be an operator to use this command."));
-            return -1;
-        }
+        return 1;
     }
 }

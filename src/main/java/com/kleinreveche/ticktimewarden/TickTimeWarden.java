@@ -14,8 +14,12 @@ public class TickTimeWarden implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("Guarding the time-stream for idleness...");
 
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
-                dispatcher.register(CommandManager.literal("ticktimewarden").executes(TickTimeWardenCommand::run)
-                ));
+        CommandRegistrationCallback.EVENT.register(
+                (dispatcher, registryAccess, environment) -> dispatcher
+                        .register(CommandManager.literal("ticktimewarden")
+                                .requires(serverCommandSource -> serverCommandSource.hasPermissionLevel(2))
+                                .executes(TickTimeWardenCommand::run)
+                        )
+        );
     }
 }
