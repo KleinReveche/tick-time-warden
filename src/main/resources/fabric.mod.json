@@ -5,26 +5,23 @@
 	"name": "Tick-Time Warden",
 	"description": "Suspend the world when there are no players.",
 	"authors": [
-		"KleinReveche"
+		"KleinReveche",
+		"MythicalPix"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/KleinReveche/",
+		"sources": "https://github.com/KleinReveche/tick-time-warden"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/tick-time-warden/icon.png",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"com.kleinreveche.ticktimewarden.TickTimeWarden"
 		]
 	},
 	"mixins": [
-		"tick-time-warden.mixins.json",
-		{
-			"config": "tick-time-warden.client.mixins.json",
-			"environment": "client"
-		}
+		"tick-time-warden.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
