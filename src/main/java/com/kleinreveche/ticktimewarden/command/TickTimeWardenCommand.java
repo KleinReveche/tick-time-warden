@@ -6,7 +6,6 @@ import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
 
 public class TickTimeWardenCommand {
-
     public static boolean stopWhenNoPlayers = true;
 
     public static int run(@NotNull CommandContext<ServerCommandSource> context) {

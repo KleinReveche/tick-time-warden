@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MinecraftServer.class)
 class MinecraftServerMixin {
-
     @Unique
     private static final long LONG_TICK_MS = 333L;
 

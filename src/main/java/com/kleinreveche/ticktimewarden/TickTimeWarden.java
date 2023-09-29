@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TickTimeWarden implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("tick-time-warden");
+    public static final Logger LOGGER = LoggerFactory.getLogger("TickTimeWarden");
 
     @Override
     public void onInitialize() {
